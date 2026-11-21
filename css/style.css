@@ -1500,3 +1500,30 @@ html {
 #contact-form-help {
   margin: 0;
 }
+
+/* CHANGE DARK GRAY INPUT BACKGROUNDS TO WHITE */
+
+/* Footer email address field */
+.tee-footer-signup input {
+    background-color: #FFFFFF;
+    color: #35213D;
+}
+
+/* Email placeholder text */
+.tee-footer-signup input::placeholder {
+    color: #777777;
+    opacity: 1;
+}
+
+/* Product quantity number field */
+.tee-stepper input {
+    background-color: #FFFFFF;
+    color: #35213D;
+}
+
+/* Remove dark background on focus */
+.tee-footer-signup input:focus,
+.tee-stepper input:focus {
+    background-color: #FFFFFF;
+    outline: none;
+}
