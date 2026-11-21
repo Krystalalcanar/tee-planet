@@ -15,6 +15,52 @@
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+/* ============== WHITE BACKGROUNDS ============== */
+
+/* Overall website background */
+body {
+    background-color: #FFFFFF;
+}
+
+/* Home page hero section */
+.shop-hero {
+    background-color: #FFFFFF;
+}
+
+/* Make hero description text visible on white */
+.shop-hero-description {
+    color: #17131A;
+}
+
+/* Product collection section */
+.collection {
+    background-color: #FFFFFF;
+}
+
+/* Product details pages */
+.tee-product {
+    background-color: #FFFFFF;
+}
+
+/* Main footer */
+.site-footer {
+    background-color: #FFFFFF;
+}
+
+/* Contact section */
+.contact-section {
+    background-color: #FFFFFF;
+}
+
+/* Tee Planet footer */
+.tee-footer {
+    background-color: #FFFFFF;
+}
+
+/* Sign-up confirmation section */
+.signup-confirmation {
+    background-color: #FFFFFF;
+}
 
 /* ============== HERO PAGE ============== */
 .shop-hero {
