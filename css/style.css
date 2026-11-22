@@ -15,52 +15,6 @@
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
-/* ============== WHITE BACKGROUNDS ============== */
-
-/* Overall website background */
-body {
-    background-color: #FFFFFF;
-}
-
-/* Home page hero section */
-.shop-hero {
-    background-color: #FFFFFF;
-}
-
-/* Make hero description text visible on white */
-.shop-hero-description {
-    color: #17131A;
-}
-
-/* Product collection section */
-.collection {
-    background-color: #FFFFFF;
-}
-
-/* Product details pages */
-.tee-product {
-    background-color: #FFFFFF;
-}
-
-/* Main footer */
-.site-footer {
-    background-color: #FFFFFF;
-}
-
-/* Contact section */
-.contact-section {
-    background-color: #FFFFFF;
-}
-
-/* Tee Planet footer */
-.tee-footer {
-    background-color: #FFFFFF;
-}
-
-/* Sign-up confirmation section */
-.signup-confirmation {
-    background-color: #FFFFFF;
-}
 
 /* ============== HERO PAGE ============== */
 .shop-hero {
@@ -503,7 +457,6 @@ body {
 .startup-founder-portraits img {
   position: absolute;
   inset-inline: 0;
-  /* Raise the image to hide the transparent space above the portraits. */
   top: -136%;
   width: 100%;
   height: auto;
@@ -1171,17 +1124,32 @@ html {
 
 .tee-cart-close {
   position: absolute;
-  top: 0.65rem;
-  right: 0.65rem;
-  width: 3rem;
-  height: 3rem;
+  top: 1.25rem;
+  right: 1.25rem;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  padding: 0;
   border: 0;
   border-radius: 0.35rem;
   background: transparent;
   color: #717171;
-  font: 2.65rem / 1 Arial, sans-serif;
+  font-size: 0;
   cursor: pointer;
 }
+
+.tee-cart-close::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  clip-path: polygon(
+    0 6%, 6% 0, 50% 44%, 94% 0, 100% 6%, 56% 50%,
+    100% 94%, 94% 100%, 50% 56%, 6% 100%, 0 94%, 44% 50%
+  );
+}
+
 
 .tee-cart-close:focus-visible {
   outline: 2px solid var(--tee-purple);
@@ -1445,26 +1413,11 @@ html {
 }
 
 
-/* Accessibility */
+/* MORE ACCESSIBILITY FEATURES - focus */
 :focus-visible {
   outline: 3px solid #46217e;
   outline-offset: 3px;
   box-shadow: 0 0 0 3px #fff;
-}
-
-.skip-link {
-  position: fixed;
-  top: 0.5rem;
-  left: 0.5rem;
-  z-index: 1100;
-  padding: 0.65rem 1rem;
-  background: #fff;
-  color: #46217e;
-  transform: translateY(-200%);
-}
-
-.skip-link:focus {
-  transform: none;
 }
 
 .navbar .nav-link,
@@ -1499,31 +1452,4 @@ html {
 
 #contact-form-help {
   margin: 0;
-}
-
-/* CHANGE DARK GRAY INPUT BACKGROUNDS TO WHITE */
-
-/* Footer email address field */
-.tee-footer-signup input {
-    background-color: #FFFFFF;
-    color: #35213D;
-}
-
-/* Email placeholder text */
-.tee-footer-signup input::placeholder {
-    color: #777777;
-    opacity: 1;
-}
-
-/* Product quantity number field */
-.tee-stepper input {
-    background-color: #FFFFFF;
-    color: #35213D;
-}
-
-/* Remove dark background on focus */
-.tee-footer-signup input:focus,
-.tee-stepper input:focus {
-    background-color: #FFFFFF;
-    outline: none;
 }
