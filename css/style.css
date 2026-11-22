@@ -1,3 +1,14 @@
+/* ============== PAGE COLORS ============== */
+:root {
+  color-scheme: only light;
+}
+
+html,
+body {
+  background-color: #fff;
+  color: #19151a;
+}
+
 /* ============== NAVBAR ============== */
 .navbar .nav-link {
   font-family: "Huninn", sans-serif;
