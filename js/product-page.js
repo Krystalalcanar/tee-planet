@@ -10,10 +10,27 @@ function showPhoto(index) {
     dots[position].setAttribute('aria-pressed', String(isActive));
   });
 }
+const carousel = document.querySelector('.tee-carousel');
 
-document.querySelector('.tee-prev').addEventListener('click', () => showPhoto(activePhoto - 1));
-document.querySelector('.tee-next').addEventListener('click', () => showPhoto(activePhoto + 1));
+carousel.querySelector('.tee-prev').addEventListener('click', () => showPhoto(activePhoto - 1));
+carousel.querySelector('.tee-next').addEventListener('click', () => showPhoto(activePhoto + 1));
 dots.forEach((dot, index) => dot.addEventListener('click', () => showPhoto(index)));
+
+// Keyboard arrows
+
+carousel.addEventListener('keydown', (event) => {
+  if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+    return;
+  }
+
+  if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    showPhoto(activePhoto - 1);
+  } else if (event.key === 'ArrowRight') {
+    event.preventDefault();
+    showPhoto(activePhoto + 1);
+  }
+});
 
 const product = document.querySelector('.tee-product');
 const productName = product.querySelector('h1').textContent;
