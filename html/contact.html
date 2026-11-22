@@ -21,7 +21,6 @@
 
 
         <body class="d-flex flex-column min-vh-100">
-        <a class="skip-link" href="#main-content">Skip to main content</a>
 
             <!--============ NAVBAR =============-->
             <nav class="navbar md:navbar-expand site-nav" aria-label="Main navigation">
@@ -56,7 +55,7 @@
 <!-- this js is for the sticky navbar-->
 <script src="../js/navigation.js" defer></script>
 
-<main id="main-content" tabindex="-1" class="contact-section" aria-labelledby="contact-title">
+<main class="contact-section" aria-labelledby="contact-title">
   <h1 id="contact-title">Get in Touch</h1>
   <p class="contact-intro">We’d love to hear from you. Send us a message and we’ll get back to you soon.</p>
 
@@ -92,18 +91,18 @@
       <p id="contact-form-help">Sending opens a draft in your email app. Review it there and click "send".</p>
       <div class="contact-field">
         <label for="contact-name">Name (required)</label>
-        <input id="contact-name" name="name" autocomplete="name" required>
+        <input id="contact-name" name="name" autocomplete="name" required placeholder="First Name Last name | example: Juan Dela Cruz">
       </div>
 
       <div class="contact-field">
         <label for="contact-email">Email (required)</label>
         <input id="contact-email" name="email" type="email"
-               autocomplete="email" required>
+               autocomplete="email" required placeholder="enter a valid email address | example: juandlc@gmail.com">
       </div>
 
       <div class="contact-field">
         <label for="contact-subject">Subject (required)</label>
-        <input id="contact-subject" name="subject" required>
+        <input id="contact-subject" name="subject" required placeholder="ex: Delivery Issue">
       </div>
 
       <div class="contact-field">
@@ -133,6 +132,18 @@
 
 <!--this is the js code that will submit the message to the email-->
 <script>
+  const contactEmail = document.getElementById('contact-email');
+
+  contactEmail.addEventListener('invalid', () => {
+    if (contactEmail.validity.typeMismatch) {
+      contactEmail.setCustomValidity('must be a valid email address');
+    }
+  });
+
+  contactEmail.addEventListener('input', () => {
+    contactEmail.setCustomValidity('');
+  });
+
   document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -206,7 +217,7 @@
       </form>
       <p class="signup-error" role="status"></p>
 
-      <p class="tee-footer-meta">Tee Planet · © 2026 · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a></p>
+      <p class="tee-footer-meta">Tee Planet · © 2026 · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></p>
     </div>
   </div>
 </footer>
